@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Cvičný phishingový e-mail</title>
+<style>
+:root{--bg:#eef1f5;--fg:#1b1b1b;--card:#fff;--blue:#0b4f9c;--red:#e60023;--grn:#2e9e4f;--mut:#666;--bd:#d5d9e0;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#15181d;--fg:#eceff3;--card:#222831;--mut:#9aa3ad;--bd:#3a424d;--blue:#6fa8f0}}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;font-family:Verdana,Arial,sans-serif;background:var(--bg);color:var(--fg)}
+main{max-width:680px;margin:0 auto;padding:16px}
+.mail{background:var(--card);border:1px solid var(--bd);border-radius:8px;overflow:hidden}
+.hd{padding:14px 16px;border-bottom:1px solid var(--bd)}
+.hd h1{margin:0 0 8px;font-size:1.1rem}
+.from{font-size:.85rem;color:var(--mut)}
+.body{padding:16px;line-height:1.7}
+.logo{background:var(--blue);color:#fff;padding:10px 14px;border-radius:6px;font-weight:bold;display:inline-block;margin-bottom:12px}
+.cta{display:inline-block;background:var(--red);color:#fff;padding:12px 20px;border-radius:6px;font-weight:bold;margin:10px 0}
+.sm{font-size:.75rem;color:var(--mut);margin-top:16px}
+.pk{cursor:pointer;border-radius:4px;outline:2px dotted transparent;outline-offset:2px}
+.pk:hover{outline-color:var(--mut)}
+.pk.on{outline:3px solid #f5a000;background:#f5a00033}
+.pk.ok{outline:3px solid var(--grn);background:#2e9e4f33}
+.pk.miss{outline:3px dashed var(--red);background:#e6002322}
+.pk.wrong{outline:3px solid var(--mut);background:#8884}
+.panel{background:var(--card);border:1px solid var(--bd);border-radius:8px;padding:16px;margin-top:12px}
+.hide{display:none}
+input{font:inherit;width:100%;padding:8px;margin:4px 0 10px;border:1px solid var(--bd);border-radius:6px;background:var(--bg);color:var(--fg)}
+.btn{width:100%;background:var(--blue);color:#fff;border:0;padding:12px;border-radius:6px;font:inherit;font-weight:bold;cursor:pointer;margin-top:8px}
+.btn.alt{background:var(--card);color:var(--fg);border:2px solid var(--bd)}
+.note{font-size:.85rem;color:var(--mut)}
+.url{font-family:monospace;font-size:.8rem;border:1px solid var(--bd);border-radius:4px;padding:6px;margin-bottom:10px;word-break:break-all}
+.scam{background:var(--red);color:#fff;border-radius:8px;padding:20px;text-align:center}
+.scam h2{margin:0 0 8px}
+li{margin:8px 0}
+.link{background:none;border:0;color:var(--blue);text-decoration:underline;font:inherit;cursor:pointer;padding:0}
+.lg{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:4px;vertical-align:middle}
+</style>
+</head>
+<body>
+<main>
+<section id="s1">
+<p class="note">📧 Dostal jsi tento e-mail. <b>Klikej na všechno, co ti přijde podezřelé</b> (znovu kliknutím výběr zrušíš). Až budeš hotový, dej „Vyhodnotit“.</p>
+<div class="mail">
+<div class="hd">
+<h1><span class="pk" data-k="subj" data-s="1" data-w="Strach a spěch. „Okamžitě“ a „bude zablokován“ mají zabránit tomu, abys přemýšlel.">URGENTNI: Vas ucet bude do 24 hodin zablokovan!</span></h1>
+<div class="from">Od: <span class="pk" data-k="from" data-s="1" data-w="Divná adresa odesílatele. Skutečná banka píše ze své vlastní domény, ne z adresy s dalšími slovy navíc.">Banka Horizont &lt;podpora@horizont-banka-overeni.cz&gt;</span></div></div>
+<div class="body">
+<span class="pk" data-k="logo" data-s="0" data-w="Logo se dá snadno zkopírovat. Samo o sobě nic nedokazuje, ale ani nic neprozrazuje."><span class="logo">🏦 Banka Horizont</span></span>
+<p><span class="pk" data-k="osl" data-s="1" data-w="Banka zná tvé jméno. Obecné oslovení a překlep („klinte“) jsou varovné znamení.">Vazeny klinte,</span></p>
+<p>zaznamenali jsme <span class="pk" data-k="typo" data-s="1" data-w="Pravopisné chyby („aktivytu“, „udaje“). Skutečná banka text kontroluje, podvodníci často spěchají.">podezrelou aktivytu</span> na Vasem uctu. Pro ochranu Vasich penez je nutne okamzite overit sve udaje.
+<span class="pk" data-k="cas" data-s="1" data-w="Tlak na čas. Podvodníci chtějí, abys jednal dřív, než si to rozmyslíš.">Pokud tak neucinite do 24 hodin, ucet bude trvale zablokovan a penize se nemusi vratit.</span></p>
+<span class="pk" data-k="btn" data-s="1" data-w="Odkaz na přihlášení v e-mailu. Banky tě nežádají o přihlášení přes odkaz, ten může vést na falešnou stránku (zde horizont-banka-overeni.cz)."><span class="cta">OVERIT UCET HNED</span></span>
+<p class="sm"><span class="pk" data-k="foot" data-s="0" data-w="Tohle je v e-mailech od firem docela běžné, samo o sobě to podezřelé není.">Tento e-mail je automaticky, neodpovidejte na nej.</span></p>
+</div></div>
+<button class="btn" id="eval">Vyhodnotit</button>
+</section>
+
+<section id="s1b" class="hide">
+<div class="panel"><h2 id="score"></h2>
+<p class="note"><span class="lg" style="background:var(--grn)"></span>našel jsi <span class="lg" style="background:var(--red)"></span>přehlédl jsi <span class="lg" style="background:var(--mut)"></span>nebylo podezřelé</p>
+<ul id="why"></ul>
+<h3>A co uděláš teď?</h3>
+<button class="btn" id="del">🗑 Smazat e-mail a nahlásit ho jako podvod</button>
+<button class="btn alt" id="go">🖱 Kliknout na odkaz (ukáže se, co by se stalo)</button>
+</div>
+</section>
+
+<section id="s2" class="hide">
+<div class="panel"><h2>🏦 Banka Horizont – Prihlaseni</h2>
+<div class="url">http://horizont-banka-overeni.cz/login</div>
+<p class="note">🔒 Cvičná stránka: nic se nikam neodesílá. Nepiš sem žádné skutečné údaje, vymysli si cokoli.</p>
+<label>Uživatelské jméno</label><input id="u" placeholder="vymyšlené jméno">
+<label>Heslo</label><input id="pw" type="password" placeholder="vymyšlené heslo">
+<button class="btn" id="login">Přihlásit se</button></div>
+</section>
+
+<section id="s3" class="hide">
+<div class="scam"><h2>🎣 Nachytali tě!</h2><p>Tohle byl phishing. Kdyby to byla pravda, podvodník by teď měl tvé přihlašovací údaje a mohl by vybrat účet.</p></div>
+<div class="panel"><h3>Co dělat, když ti přijde takový e-mail?</h3>
+<ul><li>Neklikej na odkaz a nic nevyplňuj.</li><li>Ukaž ho rodičům.</li><li>Když si nejsi jistý, zavolej bance na číslo z jejích oficiálních stránek.</li><li>Když už jsi něco zadal, řekni to ihned rodičům, aby změnili heslo a zavolali bance.</li></ul>
+<p><button class="link" id="again">Zkusit znovu</button></p></div>
+</section>
+
+<section id="s4" class="hide">
+<div class="scam" style="background:var(--grn)"><h2>✅ Správně!</h2><p>Nekliknout, ukázat rodičům a nahlásit. Přesně tak se to dělá.</p></div>
+<div class="panel"><p><button class="link" id="again2">Zkusit znovu</button></p></div>
+</section>
+</main>
+<script>
+const $=id=>document.getElementById(id);
+const pk=[...document.querySelectorAll(".pk")];
+function show(n){["s1","s1b","s2","s3","s4"].forEach(x=>$(x).classList.toggle("hide",x!="s"+n));window.scrollTo(0,0);}
+let locked=false;
+document.addEventListener("click",e=>{const p=e.target.closest(".pk");if(!p||locked)return;
+ const inner=p.querySelector(".pk");if(inner&&e.target.closest(".pk")!==p)return;
+ p.classList.toggle("on");e.stopPropagation();});
+$("eval").onclick=()=>{locked=true;let found=0,total=0,html="";
+ pk.forEach(p=>{const sus=p.dataset.s=="1",on=p.classList.contains("on");p.classList.remove("on");
+  if(sus){total++;if(on){found++;p.classList.add("ok");}else p.classList.add("miss");
+   html+=`<li>${on?"✅":"❌"} ${p.dataset.w}</li>`;}
+  else if(on){p.classList.add("wrong");html+=`<li>⚪ ${p.dataset.w}</li>`;}});
+ $("score").textContent=`Našel jsi ${found} z ${total} podezřelých věcí`;
+ $("why").innerHTML=html;
+ $("s1").querySelector(".note").classList.add("hide");$("eval").classList.add("hide");
+ $("s1b").classList.remove("hide");$("s1b").scrollIntoView({behavior:"smooth"});};
+$("del").onclick=()=>show(4);
+$("go").onclick=()=>show(2);
+$("login").onclick=()=>{$("u").value="";$("pw").value="";show(3);};
+$("again").onclick=()=>location.reload();
+$("again2").onclick=()=>location.reload();
+</script>
+</body>
+</html>
